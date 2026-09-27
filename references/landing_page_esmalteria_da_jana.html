@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jana Esmalteria — Agendamento e Curso Molde F1</title>
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#2B0A1C',
+            'blush-bg': '#F4E1E7',
+            'blush-panel': '#EDD0DA',
+            'blush-soft': '#FBF0F2',
+            wine: '#4F0E2F',
+            'wine-deep': '#43092A',
+            'wine-footer': '#3A0823',
+            'wine-card': '#57153A',
+            'hot-pink': '#FF4D8D',
+            'cream-white': '#FBF0F2',
+            'card-white': '#FFFAF9',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          spacing: {
+            '128': '32rem',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Arch & Geometric Utilities */
+    .arch-frame {
+      border-radius: 9999px 9999px 0 0;
+      overflow: hidden;
+    }
+    
+    .arch-card {
+      border-radius: 9999px 9999px 24px 24px;
+    }
+
+    /* Ticket Cutouts using Radial Gradient Masks */
+    .ticket-card {
+      position: relative;
+      background: #FBF0F2;
+      border-radius: 28px;
+    }
+
+    .ticket-punch {
+      position: relative;
+    }
+
+    .ticket-punch::before,
+    .ticket-punch::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      background-color: #4F0E2F;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .ticket-punch::before {
+      left: -12px;
+    }
+
+    .ticket-punch::after {
+      right: -12px;
+    }
+
+    /* Active Tab indicator transition */
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #FF4D8D;
+      border-radius: 999px;
+    }
+
+    /* Smooth page fade transition */
+    .page-view {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+
+    .page-view.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Nail SVG styling */
+    .nail-shape-icon {
+      filter: drop-shadow(0 2px 4px rgba(43, 10, 28, 0.08));
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-ink bg-blush-bg selection:bg-hot-pink selection:text-ink">
+
+  <header id="site-header" class="sticky top-0 z-50 transition-colors duration-300 backdrop-blur-md bg-blush-bg/95 border-b border-ink/5">
+    <div class="max-w-[1320px] mx-auto px-6 sm:px-8 py-5 flex items-center justify-between">
+      <!-- Brand Wordmark -->
+      <a href="#agendamento" onclick="switchPage('agendamento'); return false;" class="text-xl sm:text-2xl font-extrabold tracking-tight transition-opacity hover:opacity-80" id="header-brand">
+        Jana Esmalteria
+      </a>
+
+      <!-- Page Switcher Navigation -->
+      <nav class="flex items-center space-x-8 sm:space-x-12" aria-label="Navegação principal">
+        <button 
+          id="nav-agendamento" 
+          onclick="switchPage('agendamento')" 
+          class="nav-link active text-sm sm:text-base font-semibold tracking-wide py-1 text-ink focus:outline-none"
+          aria-current="page">
+          Agendamento
+        </button>
+        <button 
+          id="nav-curso" 
+          onclick="switchPage('curso')" 
+          class="nav-link text-sm sm:text-base font-semibold tracking-wide py-1 text-ink/75 hover:text-ink focus:outline-none"
+          aria-current="false">
+          Curso
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================= -->
+    <!-- PÁGINA 1: AGENDAMENTO (Tema Blush Pink / Ink)                           -->
+    <!-- ========================================================================= -->
+    <div id="page-agendamento" class="page-view active bg-blush-bg text-ink">
+      
+      <section class="pt-12 sm:pt-20 pb-16 sm:pb-28">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Narrative Column -->
+            <div class="lg:col-span-7 space-y-6 sm:space-y-8">
+              <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold leading-[1.03] tracking-[-0.035em] text-ink max-w-xl">
+                Alongamento em gel com hora marcada em João Pessoa.
+              </h1>
+              <p class="text-lg sm:text-xl text-ink/80 leading-relaxed font-normal max-w-xl">
+                Atendimento individual, acabamento fino e naturalidade que dura semanas. Sem pressa, com materiais esterilizados e técnica focada na saúde da sua unha.
+              </p>
+              
+              <!-- CTA Group -->
+              <div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8">
+                <a href="#seletor-agendamento" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-hot-pink text-ink font-bold text-base hover:brightness-95 active:scale-[0.98] transition-all shadow-sm">
+                  Agendar pelo WhatsApp
+                </a>
+                <button onclick="switchPage('curso')" class="text-ink font-semibold text-base border-b-2 border-hot-pink pb-0.5 hover:opacity-80 transition-opacity">
+                  Ver o curso de Molde F1
+                </button>
+              </div>
+            </div>
+
+            <!-- Right Hero Arch Frames (Signature Overlapping Design) -->
+            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+              <div class="relative w-full max-w-[380px] sm:max-w-[420px]">
+                
+                <!-- Main Arch Photo -->
+                <div class="arch-frame w-[270px] sm:w-[320px] h-[380px] sm:h-[450px] bg-blush-panel ml-auto shadow-md relative overflow-hidden border-4 border-blush-bg">
+                  <img 
+                    src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80" 
+                    alt="Alongamento em gel elegante com acabamento natural feito por Jana" 
+                    class="w-full h-full object-cover object-center"
+                    onerror="this.src='https://placehold.co/600x900/EDD0DA/2B0A1C?text=Jana+Esmalteria'"
+                  >
+                </div>
+
+                <!-- Overlapping Accent Arch -->
+                <div class="arch-frame w-[140px] sm:w-[170px] h-[190px] sm:h-[230px] bg-card-white absolute -bottom-6 -left-4 sm:left-2 shadow-xl border-4 border-blush-bg overflow-hidden z-10">
+                  <img 
+                    src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=500&q=80" 
+                    alt="Detalhe de precisão e brilho do alongamento" 
+                    class="w-full h-full object-cover object-center"
+                    onerror="this.src='https://placehold.co/400x550/FFFAF9/2B0A1C?text=Detalhe+Unha'"
+                  >
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 border-t border-ink/5">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          
+          <!-- Section Heading Bar -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-baseline justify-between mb-12 sm:mb-16 gap-4">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+              Trabalhos recentes
+            </h2>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-ink border-b-2 border-hot-pink pb-0.5 hover:opacity-80 transition-opacity">
+              @esmalteriadajana_jp no Instagram
+            </a>
+          </div>
+
+          <!-- Staggered Arches Row -->
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+            
+            <!-- Arch Item 1 (High) -->
+            <div class="arch-frame h-[260px] sm:h-[300px] bg-blush-panel shadow-sm group overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=400&q=80" 
+                alt="Alongamento formato Amendoada" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/300x450/EDD0DA/2B0A1C?text=Trabalho+1'"
+              >
+            </div>
+
+            <!-- Arch Item 2 (Staggered Offset) -->
+            <div class="arch-frame h-[260px] sm:h-[300px] bg-blush-panel shadow-sm group overflow-hidden mt-6 sm:mt-10">
+              <img 
+                src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=400&q=80" 
+                alt="Alongamento clássico formato Quadrada" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/300x450/EDD0DA/2B0A1C?text=Trabalho+2'"
+              >
+            </div>
+
+            <!-- Arch Item 3 (High) -->
+            <div class="arch-frame h-[260px] sm:h-[300px] bg-blush-panel shadow-sm group overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=400&q=80" 
+                alt="Nail art minimalista em gel" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/300x450/EDD0DA/2B0A1C?text=Trabalho+3'"
+              >
+            </div>
+
+            <!-- Arch Item 4 (Staggered Offset) -->
+            <div class="arch-frame h-[260px] sm:h-[300px] bg-blush-panel shadow-sm group overflow-hidden mt-6 sm:mt-10">
+              <img 
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=400&q=80" 
+                alt="Alongamento formato Bailarina" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/300x450/EDD0DA/2B0A1C?text=Trabalho+4'"
+              >
+            </div>
+
+            <!-- Arch Item 5 (High) -->
+            <div class="arch-frame h-[260px] sm:h-[300px] bg-blush-panel shadow-sm group overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=400&q=80" 
+                alt="Manutenção com brilho espelhado" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/300x450/EDD0DA/2B0A1C?text=Trabalho+5'"
+              >
+            </div>
+
+            <!-- Arch Item 6 (Staggered Offset) -->
+            <div class="arch-frame h-[260px] sm:h-[300px] bg-blush-panel shadow-sm group overflow-hidden mt-6 sm:mt-10">
+              <img 
+                src="https://images.unsplash.com/photo-1583001809873-a128495da465?auto=format&fit=crop&w=400&q=80" 
+                alt="Alongamento Stiletto estruturado" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/300x450/EDD0DA/2B0A1C?text=Trabalho+6'"
+              >
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section id="seletor-agendamento" class="py-16 sm:py-28 bg-[#f1d7e0]/40">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            <!-- Left Column: Service Details -->
+            <div class="lg:col-span-6 space-y-8">
+              <div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink mb-4">
+                  Agende seu horário
+                </h2>
+                <p class="text-lg text-ink/80 leading-relaxed">
+                  Três serviços principais pensados para quem valoriza acabamento impecável, durabilidade e atendimento sem correria.
+                </p>
+              </div>
+
+              <!-- Services Stack -->
+              <div class="divide-y divide-ink/15 border-t border-b border-ink/15">
+                
+                <!-- Service 1 -->
+                <div class="py-6 sm:py-7">
+                  <div class="flex items-baseline justify-between mb-2">
+                    <h3 class="text-xl sm:text-2xl font-bold text-ink">Alongamento em gel</h3>
+                    <span class="text-sm font-semibold text-ink/70">Aprox. 2h30</span>
+                  </div>
+                  <p class="text-base text-ink/75 leading-relaxed">
+                    Aplicação completa com preparação segura da lâmina, estrutura leve e curvatura sob medida para suas mãos.
+                  </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="py-6 sm:py-7">
+                  <div class="flex items-baseline justify-between mb-2">
+                    <h3 class="text-xl sm:text-2xl font-bold text-ink">Manutenção</h3>
+                    <span class="text-sm font-semibold text-ink/70">20 a 25 dias</span>
+                  </div>
+                  <p class="text-base text-ink/75 leading-relaxed">
+                    Nivelamento do crescimento, reforço estrutural, troca de esmaltação e revisão completa do alinhamento.
+                  </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="py-6 sm:py-7">
+                  <div class="flex items-baseline justify-between mb-2">
+                    <h3 class="text-xl sm:text-2xl font-bold text-ink">Pedicure em gel</h3>
+                    <span class="text-sm font-semibold text-ink/70">Aprox. 1h30</span>
+                  </div>
+                  <p class="text-base text-ink/75 leading-relaxed">
+                    Esmaltação em gel nos pés com durabilidade superior a 30 dias, brilho vitrificado e secagem instantânea.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="bg-card-white/60 p-5 rounded-2xl border border-ink/5">
+                <p class="text-sm text-ink/80">
+                  <strong class="font-bold text-ink">Importante:</strong> Se você já possui alongamento feito em outro espaço e precisa de remoção ou manutenção, nos avise no WhatsApp para reservarmos o tempo adequado.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Nail Shape Selector Card -->
+            <div class="lg:col-span-6">
+              <div class="bg-card-white rounded-[32px] p-6 sm:p-10 shadow-xl border border-ink/5 relative">
+                
+                <!-- Dynamic Nail Visual Preview Area -->
+                <div class="flex flex-col items-center justify-center p-6 bg-blush-bg/50 rounded-2xl mb-8 border border-blush-panel transition-all duration-300 min-h-[170px]">
+                  
+                  <div id="preview-icon-wrapper" class="w-20 h-24 mb-3 flex items-center justify-center">
+                    <!-- Default initial state: Dashed SVG Outline -->
+                    <svg id="preview-dashed-nail" class="w-16 h-20 text-ink/30 animate-pulse" viewBox="0 0 60 90" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round">
+                      <path d="M 14 85 C 14 85, 12 50, 12 30 C 12 14, 20 8, 30 8 C 40 8, 48 14, 48 30 C 48 50, 46 85, 46 85 Z" />
+                    </svg>
+
+                    <!-- Quadrada preview SVG (hidden by default) -->
+                    <svg id="preview-quadrada" class="nail-shape-icon w-16 h-20 hidden" viewBox="0 0 60 90" fill="none">
+                      <path d="M 12 85 L 12 25 L 48 25 L 48 85 Z" fill="#FF4D8D"/>
+                      <path d="M 16 30 L 16 75" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                    </svg>
+
+                    <!-- Amendoada preview SVG (hidden by default) -->
+                    <svg id="preview-amendoada" class="nail-shape-icon w-16 h-20 hidden" viewBox="0 0 60 90" fill="none">
+                      <path d="M 13 85 C 13 60, 16 35, 30 18 C 44 35, 47 60, 47 85 Z" fill="#FF4D8D"/>
+                      <path d="M 20 38 C 18 55, 18 75, 18 75" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                    </svg>
+
+                    <!-- Bailarina preview SVG (hidden by default) -->
+                    <svg id="preview-bailarina" class="nail-shape-icon w-16 h-20 hidden" viewBox="0 0 60 90" fill="none">
+                      <path d="M 12 85 L 20 22 L 40 22 L 48 85 Z" fill="#FF4D8D"/>
+                      <path d="M 21 32 L 18 75" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                    </svg>
+
+                    <!-- Stiletto preview SVG (hidden by default) -->
+                    <svg id="preview-stiletto" class="nail-shape-icon w-16 h-20 hidden" viewBox="0 0 60 90" fill="none">
+                      <path d="M 12 85 L 30 12 L 48 85 Z" fill="#FF4D8D"/>
+                      <path d="M 25 35 L 18 75" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                    </svg>
+                  </div>
+
+                  <h4 id="preview-title" class="text-lg font-bold text-ink">
+                    Seu formato aparece aqui
+                  </h4>
+                  <p id="preview-subtitle" class="text-xs sm:text-sm text-ink/70">
+                    Toque em uma das opções abaixo.
+                  </p>
+                </div>
+
+                <!-- Form Heading -->
+                <div class="mb-5">
+                  <h4 class="text-xl font-bold text-ink">
+                    Qual formato você quer?
+                  </h4>
+                </div>
+
+                <!-- 2x2 Grid of Shapes -->
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6" role="radiogroup" aria-label="Formatos de unha disponíveis">
+                  
+                  <!-- Option 1: Quadrada -->
+                  <button 
+                    type="button" 
+                    onclick="selectShape('quadrada', 'Quadrada')" 
+                    id="btn-shape-quadrada" 
+                    role="radio" 
+                    aria-checked="false"
+                    class="shape-option-btn flex items-center space-x-3.5 p-3.5 sm:p-4 rounded-2xl border-2 border-blush-panel bg-white hover:border-hot-pink/60 transition-all text-left">
+                    <!-- SVG Icon Quadrada -->
+                    <div class="w-8 h-10 flex-shrink-0 flex items-center justify-center">
+                      <svg class="w-7 h-9" viewBox="0 0 40 50" fill="none">
+                        <path d="M 8 46 L 8 12 L 32 12 L 32 46 Z" fill="#FF4D8D"/>
+                        <path d="M 12 16 L 12 40" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="block text-base font-bold text-ink">Quadrada</span>
+                      <span class="block text-xs text-ink/60">Clássica e reta</span>
+                    </div>
+                  </button>
+
+                  <!-- Option 2: Amendoada -->
+                  <button 
+                    type="button" 
+                    onclick="selectShape('amendoada', 'Amendoada')" 
+                    id="btn-shape-amendoada" 
+                    role="radio" 
+                    aria-checked="false"
+                    class="shape-option-btn flex items-center space-x-3.5 p-3.5 sm:p-4 rounded-2xl border-2 border-blush-panel bg-white hover:border-hot-pink/60 transition-all text-left">
+                    <!-- SVG Icon Amendoada -->
+                    <div class="w-8 h-10 flex-shrink-0 flex items-center justify-center">
+                      <svg class="w-7 h-9" viewBox="0 0 40 50" fill="none">
+                        <path d="M 8 46 C 8 30, 11 16, 20 8 C 29 16, 32 30, 32 46 Z" fill="#FF4D8D"/>
+                        <path d="M 13 20 C 12 28, 12 40, 12 40" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="block text-base font-bold text-ink">Amendoada</span>
+                      <span class="block text-xs text-ink/60">Alongada e suave</span>
+                    </div>
+                  </button>
+
+                  <!-- Option 3: Bailarina -->
+                  <button 
+                    type="button" 
+                    onclick="selectShape('bailarina', 'Bailarina')" 
+                    id="btn-shape-bailarina" 
+                    role="radio" 
+                    aria-checked="false"
+                    class="shape-option-btn flex items-center space-x-3.5 p-3.5 sm:p-4 rounded-2xl border-2 border-blush-panel bg-white hover:border-hot-pink/60 transition-all text-left">
+                    <!-- SVG Icon Bailarina -->
+                    <div class="w-8 h-10 flex-shrink-0 flex items-center justify-center">
+                      <svg class="w-7 h-9" viewBox="0 0 40 50" fill="none">
+                        <path d="M 8 46 L 14 11 L 26 11 L 32 46 Z" fill="#FF4D8D"/>
+                        <path d="M 14 17 L 12 40" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="block text-base font-bold text-ink">Bailarina</span>
+                      <span class="block text-xs text-ink/60">Afunilada com topo reto</span>
+                    </div>
+                  </button>
+
+                  <!-- Option 4: Stiletto -->
+                  <button 
+                    type="button" 
+                    onclick="selectShape('stiletto', 'Stiletto')" 
+                    id="btn-shape-stiletto" 
+                    role="radio" 
+                    aria-checked="false"
+                    class="shape-option-btn flex items-center space-x-3.5 p-3.5 sm:p-4 rounded-2xl border-2 border-blush-panel bg-white hover:border-hot-pink/60 transition-all text-left">
+                    <!-- SVG Icon Stiletto -->
+                    <div class="w-8 h-10 flex-shrink-0 flex items-center justify-center">
+                      <svg class="w-7 h-9" viewBox="0 0 40 50" fill="none">
+                        <path d="M 8 46 L 20 6 L 32 46 Z" fill="#FF4D8D"/>
+                        <path d="M 17 18 L 13 40" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="block text-base font-bold text-ink">Stiletto</span>
+                      <span class="block text-xs text-ink/60">Ponta fina e marcante</span>
+                    </div>
+                  </button>
+
+                </div>
+
+                <!-- Guidance helper link -->
+                <div class="text-center mb-6">
+                  <button 
+                    type="button" 
+                    onclick="showHelpModal()" 
+                    class="text-sm font-semibold text-ink border-b border-hot-pink pb-0.5 hover:text-hot-pink transition-colors">
+                    Ainda não sei, quero ajuda para escolher
+                  </button>
+                </div>
+
+                <!-- Primary Action CTA -->
+                <a 
+                  id="whatsapp-cta-btn" 
+                  href="https://wa.me/5583999999999?text=Ol%C3%A1%2C%20Jana%21%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20alongamento%20em%20gel." 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-full flex items-center justify-center py-4 px-6 rounded-full bg-hot-pink text-ink font-bold text-base hover:brightness-95 active:scale-[0.99] transition-all shadow-md">
+                  Agendar pelo WhatsApp
+                </a>
+
+                <!-- Microcopy reassuring users -->
+                <p id="whatsapp-microcopy" class="text-center text-xs text-ink/65 mt-3">
+                  A mensagem já vai com o formato escolhido.
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-28">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Arch Photo (Instructor Portrait) -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-start">
+              <div class="arch-frame w-[300px] sm:w-[360px] h-[420px] sm:h-[480px] bg-blush-panel shadow-lg overflow-hidden border-4 border-blush-bg">
+                <img 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" 
+                  alt="Jana, especialista em alongamento em gel e instrutora" 
+                  class="w-full h-full object-cover object-top"
+                  onerror="this.src='https://placehold.co/600x800/EDD0DA/2B0A1C?text=Jana+Esmalteria'"
+                >
+              </div>
+            </div>
+
+            <!-- Right Bio Column -->
+            <div class="lg:col-span-7 space-y-6">
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink leading-tight">
+                Quem faz suas unhas é a <span class="border-b-4 border-hot-pink pb-1">Jana</span>
+              </h2>
+              
+              <p class="text-lg text-ink/85 leading-relaxed font-normal">
+                Especialista em técnicas modernas de extensão com foco absoluto em anatomia da unha, durabilidade real e acabamento natural sem aspecto pesado.
+              </p>
+              
+              <p class="text-base sm:text-lg text-ink/80 leading-relaxed font-normal">
+                Com anos de atuação em mesa e centenas de clientes atendidas em João Pessoa, cada horário é planejado individualmente. Não divido sua atenção com outros atendimentos simultâneos.
+              </p>
+
+              <!-- 3 Bullet Benefits with Pink Dots -->
+              <div class="pt-4 space-y-4">
+                <div class="flex items-start space-x-4">
+                  <div class="w-3 h-3 rounded-full bg-hot-pink mt-1.5 flex-shrink-0"></div>
+                  <div>
+                    <h3 class="text-base sm:text-lg font-bold text-ink">Seu horário é só seu.</h3>
+                    <p class="text-sm sm:text-base text-ink/75">Atendimento individual com pontualidade e tranquilidade.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div class="w-3 h-3 rounded-full bg-hot-pink mt-1.5 flex-shrink-0"></div>
+                  <div>
+                    <h3 class="text-base sm:text-lg font-bold text-ink">Biossegurança rigorosa.</h3>
+                    <p class="text-sm sm:text-base text-ink/75">Materiais descartáveis e instrumentos autoclavados segundo as normas sanitárias.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div class="w-3 h-3 rounded-full bg-hot-pink mt-1.5 flex-shrink-0"></div>
+                  <div>
+                    <h3 class="text-base sm:text-lg font-bold text-ink">Resultado à vista.</h3>
+                    <p class="text-sm sm:text-base text-ink/75">Unhas resistentes, leves ao toque e sem dentes ou descolamento precoce.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 border-t border-ink/10">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            
+            <!-- Left Title (1/3) -->
+            <div class="lg:col-span-4">
+              <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink sticky top-28">
+                Dúvidas frequentes
+              </h2>
+            </div>
+
+            <!-- Right Accordions (2/3) -->
+            <div class="lg:col-span-8 divide-y divide-ink/15 border-t border-b border-ink/15">
+              
+              <!-- FAQ Item 1 (Expanded by default as shown in reference) -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-ink focus:outline-none"
+                  aria-expanded="true">
+                  <span>Quanto tempo dura o procedimento de alongamento?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">−</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-ink/80 leading-relaxed">
+                  A primeira aplicação completa de alongamento em gel leva em média 2h30. Esse tempo garante a preparação minuciosa da lâmina, correta secagem em cabine, simetria e acabamento refinado sem queimação.
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-ink focus:outline-none"
+                  aria-expanded="false">
+                  <span>Onde fica o estúdio em João Pessoa?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-ink/80 leading-relaxed hidden">
+                  Nosso espaço de atendimento exclusivo está localizado no bairro Manaíra, em João Pessoa / PB, com fácil acesso, estacionamento nas proximidades e ambiente privativo e climatizado. O endereço completo com mapa é enviado logo após a confirmação do horário no WhatsApp.
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-ink focus:outline-none"
+                  aria-expanded="false">
+                  <span>Quais são as formas de pagamento aceitas?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-ink/80 leading-relaxed hidden">
+                  Aceitamos Pix, cartões de débito e crédito (com opção de parcelamento conforme as taxas da maquininha). Solicitamos um pequeno sinal simbólico para reserva do horário na agenda, abatido no momento do atendimento.
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-ink focus:outline-none"
+                  aria-expanded="false">
+                  <span>Vocês fazem manutenção de unhas feitas em outro local?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-ink/80 leading-relaxed hidden">
+                  Sim! Fazemos a avaliação da estrutura atual para garantir que não existam infiltrações ou danos à lâmina natural. Caso a estrutura anterior esteja íntegra, realizamos a manutenção normalmente; caso contrário, orientamos a remoção segura com reaplicação.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-wine-footer text-cream-white pt-20 sm:pt-28 pb-12">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          
+          <!-- Closing Action Block -->
+          <div class="mb-16 sm:mb-24 space-y-8">
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] max-w-3xl">
+              Pronta para marcar seu horário?
+            </h2>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 pt-2">
+              <a href="https://wa.me/5583999999999?text=Ol%C3%A1%2C%20Jana%21%20Gostaria%20de%20marcar%20meu%20hor%C3%A1rio." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-hot-pink text-ink font-bold text-base hover:brightness-95 active:scale-[0.98] transition-all">
+                Agendar pelo WhatsApp
+              </a>
+              <button onclick="switchPage('curso')" class="text-cream-white font-semibold text-base border-b-2 border-hot-pink pb-0.5 hover:text-white transition-colors">
+                Conhecer o Curso Molde F1
+              </button>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="border-white/10 mb-12">
+
+          <!-- Footer Metadata Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-sm sm:text-base text-cream-white/70">
+            <div>
+              <p class="font-extrabold text-lg text-cream-white mb-1">Jana Esmalteria</p>
+              <p>Alongamento em gel e formação profissional.</p>
+            </div>
+
+            <div>
+              <p class="font-semibold text-cream-white mb-1">Localização & Atendimento</p>
+              <p>Manaíra — João Pessoa / PB</p>
+              <p class="text-xs text-cream-white/50 mt-1">Atendimento exclusivamente com hora marcada.</p>
+            </div>
+
+            <div class="md:text-right">
+              <p class="font-semibold text-cream-white mb-1">Redes sociais</p>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-cream-white hover:text-hot-pink transition-colors font-medium">
+                @esmalteriadajana_jp
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-12 text-center text-xs text-cream-white/40">
+            © 2026 Jana Esmalteria. Todos os direitos reservados.
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- PÁGINA 2: CURSO DE MOLDE F1 (Tema Vinho / Cream White)                    -->
+    <!-- ========================================================================= -->
+    <div id="page-curso" class="page-view bg-wine text-cream-white">
+      
+      <section class="pt-12 sm:pt-20 pb-16 sm:pb-28">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Narrative Column -->
+            <div class="lg:col-span-7 space-y-6 sm:space-y-8">
+              <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-wine-card text-hot-pink font-bold text-xs uppercase tracking-wider">
+                <span>Formação Presencial + Acesso Online</span>
+              </div>
+
+              <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold leading-[1.03] tracking-[-0.035em] text-cream-white max-w-xl">
+                Curso de Molde F1 com a Jana.
+              </h1>
+              
+              <p class="text-lg sm:text-xl text-cream-white/85 leading-relaxed font-normal max-w-xl">
+                Domine a técnica mais rápida, resistente e lucrativa da atualidade. Aprenda o ponto de tensão perfeito sem excesso de lixamento, reduzindo seu tempo em mesa pela metade.
+              </p>
+
+              <!-- CTA Group -->
+              <div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8">
+                <a href="#ticket-turma" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-hot-pink text-ink font-bold text-base hover:brightness-95 active:scale-[0.98] transition-all shadow-md">
+                  Garantir minha vaga
+                </a>
+                <a href="#conteudo-curso" class="text-cream-white font-semibold text-base border-b-2 border-hot-pink pb-0.5 hover:text-white transition-colors">
+                  Ver conteúdo programático
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Próxima Turma Ticket Card with Authentic Cutouts -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end" id="ticket-turma">
+              <div class="w-full max-w-[400px] ticket-card text-ink shadow-2xl overflow-hidden p-6 sm:p-8 border border-white/20">
+                
+                <!-- Ticket Top Section -->
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs uppercase tracking-wider font-extrabold px-3 py-1 bg-wine text-cream-white rounded-full">
+                      Próxima turma
+                    </span>
+                    <span class="text-xs font-semibold text-ink/60">Vagas Limitadas</span>
+                  </div>
+
+                  <div class="pt-2">
+                    <div class="flex items-baseline space-x-2">
+                      <h2 class="text-4xl sm:text-5xl font-extrabold text-ink tracking-tight">Goiânia</h2>
+                      <span class="text-xl sm:text-2xl font-bold text-ink/70">GO</span>
+                    </div>
+                    <p class="text-sm text-ink/75 mt-1 font-medium">Turma intensiva VIP com prática guiada.</p>
+                  </div>
+                </div>
+
+                <!-- Info Table / Pairs -->
+                <div class="mt-6 pt-5 border-t border-ink/15 space-y-3.5 text-sm sm:text-base">
+                  <div class="flex justify-between items-center">
+                    <span class="text-ink/65 font-medium">Data</span>
+                    <span class="font-bold text-ink">18 e 19 de Outubro</span>
+                  </div>
+                  <div class="flex justify-between items-center border-t border-ink/10 pt-3">
+                    <span class="text-ink/65 font-medium">Local</span>
+                    <span class="font-bold text-ink">Setor Bueno, Goiânia</span>
+                  </div>
+                  <div class="flex justify-between items-center border-t border-ink/10 pt-3">
+                    <span class="text-ink/65 font-medium">Duração</span>
+                    <span class="font-bold text-ink">16 horas de prática (2 dias)</span>
+                  </div>
+                  <div class="flex justify-between items-center border-t border-ink/10 pt-3">
+                    <span class="text-ink/65 font-medium">Investimento</span>
+                    <span class="font-bold text-ink text-base text-hot-pink">12x no cartão ou Pix com desconto</span>
+                  </div>
+                </div>
+
+                <!-- Ticket Punch Cutout Notch Section -->
+                <div class="ticket-punch my-6 relative flex items-center justify-center">
+                  <div class="w-full border-t-2 border-dashed border-ink/20"></div>
+                </div>
+
+                <!-- Ticket Action Section -->
+                <div class="space-y-3">
+                  <a 
+                    href="https://wa.me/5583999999999?text=Ol%C3%A1%2C%20Jana%21%20Gostaria%20de%20garantir%20minha%20vaga%20para%20o%20Curso%20Molde%20F1%20em%20Goi%C3%A2nia." 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="w-full flex items-center justify-center py-4 px-6 rounded-full bg-hot-pink text-ink font-bold text-base hover:brightness-95 active:scale-[0.99] transition-all shadow-md">
+                    Reservar vaga na turma de Goiânia
+                  </a>
+                  <p class="text-center text-xs text-ink/60">
+                    Apenas 8 alunas por turma para supervisão individual.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="conteudo-curso" class="py-16 sm:py-28 bg-wine-deep">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          
+          <!-- Section Heading -->
+          <div class="max-w-2xl mb-14 sm:mb-20">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-cream-white mb-4">
+              O que você aprende na turma
+            </h2>
+            <p class="text-lg text-cream-white/80 leading-relaxed font-normal">
+              Domine os quatro formatos comerciais mais pedidos em mesa, com nivelamento perfeito da cutícula e controle milimétrico de produto no Molde F1.
+            </p>
+          </div>
+
+          <!-- 4 Arch Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            
+            <!-- Format Card 1: Quadrada -->
+            <div class="arch-card bg-wine-card p-8 flex flex-col items-center justify-center text-center shadow-lg border border-white/5 hover:-translate-y-1 transition-transform">
+              <div class="w-20 h-28 flex items-center justify-center mb-6">
+                <!-- Large Pink Vector Icon -->
+                <svg class="nail-shape-icon w-16 h-24" viewBox="0 0 60 90" fill="none">
+                  <path d="M 12 85 L 12 25 L 48 25 L 48 85 Z" fill="#FF4D8D"/>
+                  <path d="M 16 30 L 16 75" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-cream-white mb-2">Quadrada</h3>
+              <p class="text-sm text-cream-white/70 leading-relaxed">
+                Linhas paralelas simétricas, ponta 100% reta e cantos resistentes sem quebrar.
+              </p>
+            </div>
+
+            <!-- Format Card 2: Amendoada -->
+            <div class="arch-card bg-wine-card p-8 flex flex-col items-center justify-center text-center shadow-lg border border-white/5 hover:-translate-y-1 transition-transform">
+              <div class="w-20 h-28 flex items-center justify-center mb-6">
+                <!-- Large Pink Vector Icon -->
+                <svg class="nail-shape-icon w-16 h-24" viewBox="0 0 60 90" fill="none">
+                  <path d="M 13 85 C 13 60, 16 35, 30 18 C 44 35, 47 60, 47 85 Z" fill="#FF4D8D"/>
+                  <path d="M 20 38 C 18 55, 18 75, 18 75" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-cream-white mb-2">Amendoada</h3>
+              <p class="text-sm text-cream-white/70 leading-relaxed">
+                Curvatura graciosa que afina visualmente as mãos com alta durabilidade mecânica.
+              </p>
+            </div>
+
+            <!-- Format Card 3: Bailarina -->
+            <div class="arch-card bg-wine-card p-8 flex flex-col items-center justify-center text-center shadow-lg border border-white/5 hover:-translate-y-1 transition-transform">
+              <div class="w-20 h-28 flex items-center justify-center mb-6">
+                <!-- Large Pink Vector Icon -->
+                <svg class="nail-shape-icon w-16 h-24" viewBox="0 0 60 90" fill="none">
+                  <path d="M 12 85 L 20 22 L 40 22 L 48 85 Z" fill="#FF4D8D"/>
+                  <path d="M 21 32 L 18 75" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-cream-white mb-2">Bailarina</h3>
+              <p class="text-sm text-cream-white/70 leading-relaxed">
+                Laterais convergentes com topo reto chanfrado. O ápice da sofisticação moderna.
+              </p>
+            </div>
+
+            <!-- Format Card 4: Stiletto -->
+            <div class="arch-card bg-wine-card p-8 flex flex-col items-center justify-center text-center shadow-lg border border-white/5 hover:-translate-y-1 transition-transform">
+              <div class="w-20 h-28 flex items-center justify-center mb-6">
+                <!-- Large Pink Vector Icon -->
+                <svg class="nail-shape-icon w-16 h-24" viewBox="0 0 60 90" fill="none">
+                  <path d="M 12 85 L 30 12 L 48 85 Z" fill="#FF4D8D"/>
+                  <path d="M 25 35 L 18 75" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-cream-white mb-2">Stiletto</h3>
+              <p class="text-sm text-cream-white/70 leading-relaxed">
+                Ponta afilada e estruturação de peso no ponto de estresse para total segurança.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-28 bg-wine">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          
+          <div class="max-w-2xl mb-14">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-cream-white mb-4">
+              Presencial na turma, online depois
+            </h2>
+            <p class="text-lg text-cream-white/80 leading-relaxed font-normal">
+              A combinação perfeita entre correção postural e técnica em tempo real com material de consulta contínua sempre que você tiver dúvidas.
+            </p>
+          </div>
+
+          <!-- 2x2 Matrix -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 pt-4">
+            
+            <!-- Module 1: Na turma -->
+            <div class="space-y-4 border-t border-cream-white/20 pt-6">
+              <h3 class="text-2xl font-bold text-cream-white">Na turma</h3>
+              <p class="text-base sm:text-lg text-cream-white/80 leading-relaxed">
+                Prática intensa com correção individual em tempo real. Jana acompanha de perto sua pega no motor, o ângulo de encaixe do molde na cutícula e a dosagem exata do gel para zero desperdício.
+              </p>
+            </div>
+
+            <!-- Module 2: Depois da turma -->
+            <div class="space-y-4 border-t border-cream-white/20 pt-6">
+              <h3 class="text-2xl font-bold text-cream-white">Depois da turma</h3>
+              <p class="text-base sm:text-lg text-cream-white/80 leading-relaxed">
+                Acesso por 1 ano à plataforma online completa em vídeo de alta resolução, mostrando cada etapa em macro para você reassistir no seu próprio ritmo, além de grupo VIP de suporte para dúvidas de mesa.
+              </p>
+            </div>
+
+            <!-- Module 3: O que está incluso -->
+            <div class="space-y-4 border-t border-cream-white/20 pt-6">
+              <h3 class="text-2xl font-bold text-cream-white">O que está incluso</h3>
+              <ul class="space-y-3 text-base text-cream-white/80">
+                <li class="flex items-center space-x-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-hot-pink flex-shrink-0"></span>
+                  <span>Kit inicial completo para treino em aula</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-hot-pink flex-shrink-0"></span>
+                  <span>Apostila técnica ilustrada passo a passo</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-hot-pink flex-shrink-0"></span>
+                  <span>Certificado oficial assinado com carga horária</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-hot-pink flex-shrink-0"></span>
+                  <span>Coffee break refinado nos dois dias de imersão</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Module 4: Para quem é -->
+            <div class="space-y-4 border-t border-cream-white/20 pt-6">
+              <h3 class="text-2xl font-bold text-cream-white">Para quem é</h3>
+              <p class="text-base sm:text-lg text-cream-white/80 leading-relaxed">
+                Para designers que desejam acelerar o atendimento de mesa sem perder qualidade, profissionais que querem destravar no Molde F1 e manicures que desejam ingressar no universo do alongamento de alto padrão com segurança.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-28 bg-wine-deep">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Arch Photo (Teaching in Action) -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-start">
+              <div class="arch-frame w-[300px] sm:w-[360px] h-[420px] sm:h-[480px] bg-wine-card shadow-xl overflow-hidden border-4 border-wine-deep">
+                <img 
+                  src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=700&q=80" 
+                  alt="Jana ministrando curso prático de extensão em gel" 
+                  class="w-full h-full object-cover object-center"
+                  onerror="this.src='https://placehold.co/600x800/57153A/FBF0F2?text=Jana+Instrutora'"
+                >
+              </div>
+            </div>
+
+            <!-- Right Bio Column -->
+            <div class="lg:col-span-7 space-y-6">
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-cream-white leading-tight">
+                Quem ensina é a <span class="border-b-4 border-hot-pink pb-1">Jana</span>
+              </h2>
+              
+              <p class="text-lg text-cream-white/85 leading-relaxed font-normal">
+                Com trajetória sólida na área de beleza e centenas de alunas capacitadas em diversas cidades brasileiras, Jana desenvolveu uma metodologia didática que desmistifica o uso de moldes e controle de gel.
+              </p>
+              
+              <p class="text-base sm:text-lg text-cream-white/80 leading-relaxed font-normal">
+                "Meu objetivo não é ensinar você a copiar um processo mecânico, mas sim fazer você entender a física e a anatomia da unha para resolver qualquer tipo de lâmina que sentar na sua mesa."
+              </p>
+
+              <div class="pt-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-cream-white font-semibold text-base border-b-2 border-hot-pink pb-0.5 hover:text-white transition-colors">
+                  Acompanhe os resultados das alunas no Instagram
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 bg-wine border-t border-white/10">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            
+            <!-- Left Title (1/3) -->
+            <div class="lg:col-span-4">
+              <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-cream-white sticky top-28">
+                Dúvidas sobre o curso
+              </h2>
+            </div>
+
+            <!-- Right Accordions (2/3) -->
+            <div class="lg:col-span-8 divide-y divide-white/15 border-t border-b border-white/15">
+              
+              <!-- FAQ Item 1 (Expanded by default) -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-cream-white focus:outline-none"
+                  aria-expanded="true">
+                  <span>Preciso ter experiência prévia com alongamento para fazer o curso?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">−</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-cream-white/80 leading-relaxed">
+                  Não é obrigatório ser especialista prévia. O curso aborda desde a química e preparação da unha até técnicas avançadas de simetria com Molde F1. Se você já atua como manicure tradicional ou nail designer iniciante, você conseguirá acompanhar todo o conteúdo perfeitamente.
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-cream-white focus:outline-none"
+                  aria-expanded="false">
+                  <span>O material para o treinamento presencial está incluso?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-cream-white/80 leading-relaxed hidden">
+                  Sim! Todo o material consumível (géis, moldes, brocas específicas, cabines e lixas) é disponibilizado para uso livre durante a aula prática presencial. Você só precisa levar sua boa vontade e disposição para aprender.
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-cream-white focus:outline-none"
+                  aria-expanded="false">
+                  <span>Como funciona o acesso às aulas online complementares?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-cream-white/80 leading-relaxed hidden">
+                  Assim que sua inscrição for confirmada, você recebe login individual para nossa plataforma fechada. As gravações têm visão macro e ficam liberadas por 12 meses para revisões ilimitadas.
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-cream-white focus:outline-none"
+                  aria-expanded="false">
+                  <span>Posso parcelar o valor da inscrição?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-cream-white/80 leading-relaxed hidden">
+                  Sim, você pode parcelar em até 12 vezes no cartão de crédito, com opção de dividir em 2 cartões diferentes se necessário, ou garantir desconto à vista no Pix.
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="py-6 faq-item">
+                <button 
+                  onclick="toggleFAQ(this)" 
+                  class="w-full flex items-center justify-between text-left font-bold text-lg sm:text-xl text-cream-white focus:outline-none"
+                  aria-expanded="false">
+                  <span>Haverá turmas em outras cidades além de Goiânia?</span>
+                  <span class="faq-icon text-2xl font-bold text-hot-pink ml-4">+</span>
+                </button>
+                <div class="faq-content mt-3 text-base text-cream-white/80 leading-relaxed hidden">
+                  Sim! Nosso cronograma itinerante inclui edições em Recife, Salvador, Brasília e Fortaleza ao longo do ano. Para ser avisada em primeira mão quando abrirmos turma na sua cidade, clique no link "Quero turma na minha cidade" logo abaixo.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-wine-footer text-cream-white pt-20 sm:pt-28 pb-12">
+        <div class="max-w-[1320px] mx-auto px-6 sm:px-8">
+          
+          <!-- Closing Action Block -->
+          <div class="mb-16 sm:mb-24 space-y-8">
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] max-w-3xl">
+              Garanta sua vaga na turma de Goiânia
+            </h2>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 pt-2">
+              <a href="https://wa.me/5583999999999?text=Ol%C3%A1%2C%20Jana%21%20Quero%20garantir%20minha%20vaga%20na%20turma%20do%20Curso%20Molde%20F1." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-hot-pink text-ink font-bold text-base hover:brightness-95 active:scale-[0.98] transition-all shadow-md">
+                Garantir minha vaga
+              </a>
+              <button onclick="showCityWaitlistModal()" class="text-cream-white font-semibold text-base border-b-2 border-hot-pink pb-0.5 hover:text-white transition-colors">
+                Quero turma na minha cidade
+              </button>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <hr class="border-white/10 mb-12">
+
+          <!-- Footer Metadata Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-sm sm:text-base text-cream-white/70">
+            <div>
+              <p class="font-extrabold text-lg text-cream-white mb-1">Jana Esmalteria</p>
+              <p>Formação profissional em Molde F1.</p>
+            </div>
+
+            <div>
+              <p class="font-semibold text-cream-white mb-1">Estúdio Principal</p>
+              <p>Manaíra — João Pessoa / PB</p>
+              <p class="text-xs text-cream-white/50 mt-1">Cursos presenciais itinerantes e online para todo o Brasil.</p>
+            </div>
+
+            <div class="md:text-right">
+              <p class="font-semibold text-cream-white mb-1">Redes sociais</p>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-cream-white hover:text-hot-pink transition-colors font-medium">
+                @esmalteriadajana_jp
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-12 text-center text-xs text-cream-white/40">
+            © 2026 Jana Esmalteria. Todos os direitos reservados.
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  
+  <!-- Modal 1: Consultation / Help with choosing nail shape -->
+  <div id="modal-shape-help" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-sm hidden" role="dialog" aria-modal="true" aria-labelledby="modal-shape-title">
+    <div class="bg-card-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-blush-panel relative text-ink">
+      <button onclick="closeModal('modal-shape-help')" class="absolute top-5 right-5 text-ink/50 hover:text-ink text-2xl font-bold focus:outline-none" aria-label="Fechar janela">
+        &times;
+      </button>
+
+      <h3 id="modal-shape-title" class="text-2xl font-extrabold tracking-tight mb-3">
+        Como escolher seu formato?
+      </h3>
+      
+      <p class="text-sm text-ink/75 mb-6 leading-relaxed">
+        Não se preocupe se estiver em dúvida! Jana avalia o formato natural do seu leito ungueal na hora do procedimento. Aqui está um guia rápido:
+      </p>
+
+      <div class="space-y-3.5 mb-6 text-sm">
+        <div class="p-3.5 rounded-xl bg-blush-bg/50 border border-blush-panel">
+          <strong class="font-bold text-ink">Quadrada:</strong> Ideal para quem tem leito estreito e gosta de um visual clássico, reto e elegante.
+        </div>
+        <div class="p-3.5 rounded-xl bg-blush-bg/50 border border-blush-panel">
+          <strong class="font-bold text-ink">Amendoada:</strong> A mais recomendada para o dia a dia. Não tem cantos vivos para enroscar e alonga visualmente os dedos.
+        </div>
+        <div class="p-3.5 rounded-xl bg-blush-bg/50 border border-blush-panel">
+          <strong class="font-bold text-ink">Bailarina:</strong> Sofisticada e moderna. Combina a ponta afilada com acabamento reto na ponta.
+        </div>
+        <div class="p-3.5 rounded-xl bg-blush-bg/50 border border-blush-panel">
+          <strong class="font-bold text-ink">Stiletto:</strong> Marcante e audaciosa, pontiaguda para quem ama unhas longas com muita personalidade.
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button 
+          onclick="selectShape('amendoada', 'Amendoada'); closeModal('modal-shape-help');"
+          class="flex-1 py-3 px-5 rounded-full bg-hot-pink text-ink font-bold text-sm hover:brightness-95 transition-all text-center">
+          Quero a Amendoada (Mais Popular)
+        </button>
+        <button 
+          onclick="closeModal('modal-shape-help')"
+          class="py-3 px-5 rounded-full border border-ink/20 text-ink font-semibold text-sm hover:bg-blush-bg/50 transition-colors text-center">
+          Decidir no estúdio
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Waitlist for other cities (Curso) -->
+  <div id="modal-city-waitlist" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/70 backdrop-blur-sm hidden" role="dialog" aria-modal="true" aria-labelledby="modal-city-title">
+    <div class="bg-card-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-blush-panel relative text-ink">
+      <button onclick="closeModal('modal-city-waitlist')" class="absolute top-5 right-5 text-ink/50 hover:text-ink text-2xl font-bold focus:outline-none" aria-label="Fechar janela">
+        &times;
+      </button>
+
+      <h3 id="modal-city-title" class="text-2xl font-extrabold tracking-tight mb-2">
+        Turma na sua cidade
+      </h3>
+      
+      <p class="text-sm text-ink/75 mb-6 leading-relaxed">
+        Digite sua cidade e WhatsApp. Notificaremos você assim que abrirmos votação e datas para a sua região!
+      </p>
+
+      <form onsubmit="handleWaitlistSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1" for="user-name">
+            Seu Nome
+          </label>
+          <input 
+            type="text" 
+            id="user-name" 
+            required 
+            placeholder="Ex: Mariana Silva" 
+            class="w-full px-4 py-3 rounded-xl border border-blush-panel bg-white text-ink text-sm focus:outline-none focus:border-hot-pink"
+          >
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1" for="user-city">
+            Sua Cidade e Estado
+          </label>
+          <input 
+            type="text" 
+            id="user-city" 
+            required 
+            placeholder="Ex: Recife - PE" 
+            class="w-full px-4 py-3 rounded-xl border border-blush-panel bg-white text-ink text-sm focus:outline-none focus:border-hot-pink"
+          >
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1" for="user-phone">
+            WhatsApp para contato
+          </label>
+          <input 
+            type="tel" 
+            id="user-phone" 
+            required 
+            placeholder="(00) 00000-0000" 
+            class="w-full px-4 py-3 rounded-xl border border-blush-panel bg-white text-ink text-sm focus:outline-none focus:border-hot-pink"
+          >
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 px-6 rounded-full bg-hot-pink text-ink font-bold text-sm hover:brightness-95 transition-all mt-2">
+          Entrar na lista de interesse
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-2xl bg-ink text-white text-sm font-semibold shadow-2xl flex items-center space-x-3 transition-opacity duration-300 opacity-0 pointer-events-none">
+    <span class="w-2.5 h-2.5 rounded-full bg-hot-pink"></span>
+    <span id="toast-message">Mensagem</span>
+  </div>
+
+  <script>
+    // State management
+    let currentPage = 'agendamento';
+    let selectedShapeKey = null;
+    let selectedShapeLabel = null;
+
+    /**
+     * Switch between "Agendamento" and "Curso" pages
+     */
+    function switchPage(page) {
+      if (page !== 'agendamento' && page !== 'curso') return;
+      currentPage = page;
+
+      const pageAgendamento = document.getElementById('page-agendamento');
+      const pageCurso = document.getElementById('page-curso');
+      const navAgendamento = document.getElementById('nav-agendamento');
+      const navCurso = document.getElementById('nav-curso');
+      const siteHeader = document.getElementById('site-header');
+      const headerBrand = document.getElementById('header-brand');
+
+      if (page === 'agendamento') {
+        // Switch Views
+        pageAgendamento.classList.add('active');
+        pageCurso.classList.remove('active');
+
+        // Update Nav Link Active States
+        navAgendamento.classList.add('active', 'text-ink');
+        navAgendamento.classList.remove('text-ink/75');
+        navAgendamento.setAttribute('aria-current', 'page');
+
+        navCurso.classList.remove('active', 'text-ink');
+        navCurso.classList.add('text-ink/75');
+        navCurso.setAttribute('aria-current', 'false');
+
+        // Header theme: Blush Pink / Ink
+        siteHeader.className = 'sticky top-0 z-50 transition-colors duration-300 backdrop-blur-md bg-blush-bg/95 border-b border-ink/5';
+        headerBrand.className = 'text-xl sm:text-2xl font-extrabold tracking-tight transition-opacity hover:opacity-80 text-ink';
+        navAgendamento.className = 'nav-link active text-sm sm:text-base font-semibold tracking-wide py-1 text-ink focus:outline-none';
+        navCurso.className = 'nav-link text-sm sm:text-base font-semibold tracking-wide py-1 text-ink/75 hover:text-ink focus:outline-none';
+
+        document.body.className = 'font-sans antialiased text-ink bg-blush-bg selection:bg-hot-pink selection:text-ink';
+        document.title = 'Jana Esmalteria — Agendamento de Alongamento em Gel';
+      } else {
+        // Switch Views
+        pageCurso.classList.add('active');
+        pageAgendamento.classList.remove('active');
+
+        // Update Nav Link Active States
+        navCurso.classList.add('active', 'text-cream-white');
+        navCurso.classList.remove('text-cream-white/70');
+        navCurso.setAttribute('aria-current', 'page');
+
+        navAgendamento.classList.remove('active', 'text-cream-white');
+        navAgendamento.classList.add('text-cream-white/70');
+        navAgendamento.setAttribute('aria-current', 'false');
+
+        // Header theme: Deep Wine / Cream White
+        siteHeader.className = 'sticky top-0 z-50 transition-colors duration-300 backdrop-blur-md bg-wine/95 border-b border-white/10';
+        headerBrand.className = 'text-xl sm:text-2xl font-extrabold tracking-tight transition-opacity hover:opacity-80 text-cream-white';
+        navCurso.className = 'nav-link active text-sm sm:text-base font-semibold tracking-wide py-1 text-cream-white focus:outline-none';
+        navAgendamento.className = 'nav-link text-sm sm:text-base font-semibold tracking-wide py-1 text-cream-white/70 hover:text-cream-white focus:outline-none';
+
+        document.body.className = 'font-sans antialiased text-cream-white bg-wine selection:bg-hot-pink selection:text-ink';
+        document.title = 'Jana Esmalteria — Curso de Molde F1';
+      }
+
+      // Smoothly scroll back to top of viewport
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Update location hash without jumping
+      history.replaceState(null, '', '#' + page);
+    }
+
+    /**
+     * Interactive Nail Shape Selection
+     */
+    function selectShape(key, label) {
+      selectedShapeKey = key;
+      selectedShapeLabel = label;
+
+      // 1. Reset all radio buttons
+      const buttons = document.querySelectorAll('.shape-option-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('border-hot-pink', 'bg-blush-bg/30', 'ring-2', 'ring-hot-pink/30');
+        btn.classList.add('border-blush-panel', 'bg-white');
+        btn.setAttribute('aria-checked', 'false');
+      });
+
+      // 2. Highlight clicked option
+      const activeBtn = document.getElementById('btn-shape-' + key);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-blush-panel', 'bg-white');
+        activeBtn.classList.add('border-hot-pink', 'bg-blush-bg/30', 'ring-2', 'ring-hot-pink/30');
+        activeBtn.setAttribute('aria-checked', 'true');
+      }
+
+      // 3. Update Visual Preview SVGs
+      const svgs = ['preview-dashed-nail', 'preview-quadrada', 'preview-amendoada', 'preview-bailarina', 'preview-stiletto'];
+      svgs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+      });
+
+      const activeSvg = document.getElementById('preview-' + key);
+      if (activeSvg) {
+        activeSvg.classList.remove('hidden');
+      }
+
+      // 4. Update texts and WhatsApp link
+      const titleEl = document.getElementById('preview-title');
+      const subtitleEl = document.getElementById('preview-subtitle');
+      const ctaBtn = document.getElementById('whatsapp-cta-btn');
+      const microcopyEl = document.getElementById('whatsapp-microcopy');
+
+      titleEl.textContent = 'Formato ' + label;
+      subtitleEl.textContent = 'Opção selecionada para seu atendimento.';
+
+      const encodedMessage = encodeURIComponent(
+        `Olá, Jana! Gostaria de agendar meu alongamento em gel no formato ${label}. Poderia me informar os próximos horários disponíveis?`
+      );
+
+      ctaBtn.href = `https://wa.me/5583999999999?text=${encodedMessage}`;
+      microcopyEl.innerHTML = `Mensagem configurada para: <strong class="text-ink font-semibold">${label}</strong>.`;
+
+      showToast(`Formato ${label} selecionado!`);
+    }
+
+    /**
+     * FAQ Accordion Toggle (Accessible)
+     */
+    function toggleFAQ(button) {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('.faq-icon');
+
+      if (isExpanded) {
+        button.setAttribute('aria-expanded', 'false');
+        content.classList.add('hidden');
+        icon.textContent = '+';
+      } else {
+        button.setAttribute('aria-expanded', 'true');
+        content.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    }
+
+    /**
+     * Modals Management
+     */
+    function showHelpModal() {
+      document.getElementById('modal-shape-help').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function showCityWaitlistModal() {
+      document.getElementById('modal-city-waitlist').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function handleWaitlistSubmit(event) {
+      event.preventDefault();
+      const city = document.getElementById('user-city').value;
+      closeModal('modal-city-waitlist');
+      showToast(`Obrigada! Você será avisada assim que abrirmos turma em ${city}.`);
+      event.target.reset();
+    }
+
+    /**
+     * Custom Toast Notification
+     */
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msgEl = document.getElementById('toast-message');
+      msgEl.textContent = message;
+
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    // Hash routing on initial load
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'curso') {
+        switchPage('curso');
+      } else {
+        switchPage('agendamento');
+      }
+
+      // Close modal on escape key
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal('modal-shape-help');
+          closeModal('modal-city-waitlist');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
