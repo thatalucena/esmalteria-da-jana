@@ -29,9 +29,10 @@ A troca entre as abas é feita por um seletor no topo (Agendamento | Curso), com
 
 | Turma | Quando | Valor total | Inscrição | Restante |
 |---|---|---|---|---|
-| Goiana - PE | Outubro | R$ 300,00 | R$ 80,00 | Semanal, até quitar |
-| Santa Cruz - PE | Outubro | R$ 300,00 | R$ 80,00 | Semanal, até quitar |
 | João Pessoa - PB | 08 de novembro, das 9h às 17h | R$ 397,00 | R$ 97,00 | Semanal, até quitar |
+| Natal - RN | 16 de novembro, das 9h às 17h | Sob consulta | Sob consulta | Sob consulta |
+
+> Atualizado em 22/10/2026: as turmas de Goiana/PE e Santa Cruz/PE saíram do site e entrou a de Natal/RN. A turma de Natal tem a tag de urgência **"Apenas 10 vagas"**.
 
 ### Serviços (sem valores no site)
 
@@ -130,11 +131,11 @@ Os botões são sempre rosé com **texto escuro**, por causa do contraste.
 
 ## 8. Aba Curso (tema escuro)
 
-1. **Topo:** "Aprenda Molde F1 com *naturalidade*." Tem a foto da Jana com cartões flutuantes (Curso online, Certificado nacional), brilhos e selo "+5.000 alunas formadas", além dos botões das 3 turmas com ponto pulsando. No desktop, os elementos se movem com o mouse.
+1. **Topo:** "Aprenda Molde F1 com *naturalidade*." Tem a foto da Jana com cartões flutuantes (Curso online, Certificado nacional), brilhos e selo "+5.000 alunas formadas", além dos botões das 2 turmas (João Pessoa e Natal) com ponto pulsando. No desktop, os elementos se movem com o mouse.
 2. **Faixa** de diferenciais em movimento.
 3. **O que é o Molde F1?:** blocos de tamanhos diferentes, com foto (Resultado natural), relógio animado até 60 min (Unhas em até 1 hora), Alta durabilidade e Mais clientes/mais dinheiro.
 4. **O que você aprende:** lista numerada com uma imagem em arco que fica parada e troca a cada tópico durante a rolagem. Os tópicos são Aplicação com naturalidade, Manutenção com naturalidade, Esmaltação em gel Babyboomer e Acabamento sem infiltrações.
-5. **Escolha sua turma:** 3 ingressos com data e valores, cada um com botão de WhatsApp que já traz a cidade na mensagem. No desktop, inclinam em 3D com o mouse.
+5. **Escolha sua turma:** 2 ingressos com data e valores (Natal com "Apenas 10 vagas" e valores sob consulta), cada um com botão de WhatsApp que já traz a cidade na mensagem. No desktop, inclinam em 3D com o mouse.
 6. **Presencial na turma, online depois:** jornada em 5 etapas (vaga, turma, certificado e brindes, curso online, mais clientes).
    - No desktop, a página segura a seção e os cartões correm na horizontal.
    - No celular, é uma linha do tempo vertical.
@@ -195,7 +196,8 @@ Para trocar uma foto, substitua o arquivo em `site/assets/img/` mantendo o mesmo
 
 ## 12. Pendências e pontos a validar com a cliente
 
-- **Datas exatas** das turmas de Goiana e Santa Cruz. Hoje aparecem só como "Outubro".
+- **Valor e forma de pagamento** da turma de Natal/RN. Hoje aparecem como "Sob consulta".
+- **Número de vagas** da turma de João Pessoa, caso a cliente queira a mesma tag de urgência.
 - **Links diretos dos cursos online** (Kiwify, por exemplo). Hoje os botões levam ao WhatsApp.
 - **Depoimentos reais** de clientes e alunas. Não foram incluídos, porque os do site antigo pareciam de exemplo.
 - **Revisão dos textos que foram escritos para o site** a partir dos documentos de contexto:

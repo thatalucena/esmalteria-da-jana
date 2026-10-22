@@ -1120,7 +1120,6 @@ main:focus { outline: none; }
   animation: pulse 2.4s ease-out infinite;
 }
 .city-chips li:nth-child(2) a::before { animation-delay: 0.8s; }
-.city-chips li:nth-child(3) a::before { animation-delay: 1.6s; }
 @media (hover: hover) { .city-chips a:hover { border-color: var(--rose-light); background: var(--cocoa-card); } }
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(228, 174, 180, 0.55); }
@@ -1361,6 +1360,41 @@ main:focus { outline: none; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--rose-deep);
+}
+.ticket__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+}
+.ticket__urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--rose-grad);
+  color: var(--ink);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ticket__urgency::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 0 rgba(44, 20, 17, 0.5);
+  animation: pulse-ink 2s ease-out infinite;
+}
+@keyframes pulse-ink {
+  0% { box-shadow: 0 0 0 0 rgba(44, 20, 17, 0.45); }
+  70%, 100% { box-shadow: 0 0 0 0.45rem rgba(44, 20, 17, 0); }
 }
 .ticket__city {
   margin: 0.35rem 0 1.25rem;
